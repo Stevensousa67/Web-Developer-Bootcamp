@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon Registration</title>
+</head>
+<body>
+    <header>
+        <h1>Race Registration!</h1>
+    </header>
+
+    <main>
+        <div>
+            <form action="">
+                <div>
+                     <p>
+                        <label for="first_name">First Name:</label>
+                        <input type="text" placeholder="First Name" id="first_name" required>
+                                    
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" placeholder="Last Name" id="last_name" required>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <input type="radio" id="Fun Run 5K" name="race_type" value="Fun Run 5K" required>
+                        <label for="Fun Run 5K">Fun Run 5K</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="Half Marathon" name="race_type" value="Half Marathon" required>
+                        <label for="Half Marathon">Half Marathon</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="Full Marathon" name="race_type" value="Full Marathon" required>
+                        <label for="Full Marathon">Full Marathon</label>
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" placeholder="Email" id="email"required>
+                        <label for="password">Password:</label>
+                        <input type="password" placeholder="Password" id="password"required>
+                    </p>
+                    <p>
+                        <label for="age_range">Select Age Group:</label>
+                        <select id="age_groups" name="age_groups" required>
+                            <option value="Under 18">Under 18</option>
+                            <option value="18 - 31">18 - 30</option>
+                            <option value="31-50">31 - 50</option>
+                            <option value="51+">51+</option>
+                        </select>
+                    </p>
+                </div>
+                <input type="submit" value="Register!">
+            </form>
+        </div>
+    </main>
+</body>
+</html>
