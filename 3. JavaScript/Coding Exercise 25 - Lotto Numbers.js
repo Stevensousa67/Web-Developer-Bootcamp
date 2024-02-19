@@ -1,0 +1,1 @@
+let lottoNumbers = [8, 0, 4, 7, 1, 5];
