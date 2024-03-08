@@ -8,7 +8,10 @@
 <body>
     <h1>Comment ID: <%= comment.id %></h1>
     <h2><%= comment.comment %> - <%= comment.username %></h2>
-    <a href="/comments">Back to index</a>
-    <a href="/comments/<%= comment.id %>/edit">Edit this comment</a>
+    <button onclick="window.location.href='/comments'">Back to index</button>
+    <button onclick="window.location.href='/comments/<%= comment.id %>/edit'">Edit this comment</button>
+    <form method="POST" action="/comments/<%= comment.id %>?_method=DELETE">
+        <button>Delete</button>
+    </form>
 </body>
 </html>
