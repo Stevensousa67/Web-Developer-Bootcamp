@@ -1,0 +1,13 @@
+.PropertyList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.Property {
+    width: calc(20% - 20px);
+    margin: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
