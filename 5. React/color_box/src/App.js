@@ -1,6 +1,6 @@
 import ColorBoxGrid from './ColorBoxGrid';
 
-function App() {
+export default function App() {
   return (
     <div>
       <ColorBoxGrid />
@@ -11,5 +11,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
