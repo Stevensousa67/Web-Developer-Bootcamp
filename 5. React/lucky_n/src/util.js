@@ -13,4 +13,4 @@ function sum(nums) {
     return nums.reduce((prev, curr) => prev + curr, 0);
 }
 
-export { r6, getRolls, sum };
+export { r6, getRolls, sum};
