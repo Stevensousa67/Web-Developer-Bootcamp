@@ -1,3 +1,5 @@
+require('dotenv').config();
+const axios = require('axios');
 const mongoose = require('mongoose');
 const Campground = require('../models/campground');
 const cities = require('./cities');
@@ -15,15 +17,29 @@ const sample = array => array[Math.floor(Math.random() * array.length)]
 
 const seedDB = async () => {
     await Campground.deleteMany({});
+
+    // Fetch photos from Unsplash API
+    const photosResponse = await axios.get('https://api.unsplash.com/collections/496276/photos', {
+        params: {
+            client_id: process.env.UNSPLASH_API_KEY,
+            per_page: 50 // Fetch 30 photos in a single request (adjust as necessary)
+        }
+    });
+
+    const photos = photosResponse.data;
+
     for (let i = 0; i < 50; i++) {
         const random1000 = Math.floor(Math.random() * 1000);
+        const randomPhoto = photos[Math.floor(Math.random() * photos.length)];
+
         const camp = new Campground({
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            image: 'https://source.unsplash.com/collection/483251',
+            image: randomPhoto.urls.regular,
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, quae.',
             price: Math.floor(Math.random() * 20) + 10
         });
+
         await camp.save();
     }
 };
